@@ -2,6 +2,7 @@ import { company } from '../data/investmentWindow'
 import { SovereignContainer } from './SovereignContainer'
 import { SectionHeader } from './SectionHeader'
 import { Reveal } from './Reveal'
+import { VerificationDocuments } from './VerificationDocuments'
 
 /** القسم 2 — من هي أطلس الذهبية للتعدين؟ (طبقة التعريف المؤسسي) */
 export function CompanySection() {
@@ -69,6 +70,9 @@ export function CompanySection() {
           </p>
         </div>
       </Reveal>
+
+      {/* طبقة المستندات والتحقق — كتلة داعمة داخل القسم الثاني، ليست قسمًا رئيسيًا */}
+      <VerificationDocuments />
     </SovereignContainer>
   )
 }
