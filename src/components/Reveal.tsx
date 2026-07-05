@@ -14,6 +14,7 @@ export function Reveal({ children, delayMs = 0, className = '' }: RevealProps) {
   useEffect(() => {
     const el = ref.current
     if (!el) return
+    // threshold 0 حتى تظهر الكتل الأطول من نافذة العرض أيضًا
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
@@ -21,7 +22,7 @@ export function Reveal({ children, delayMs = 0, className = '' }: RevealProps) {
           observer.disconnect()
         }
       },
-      { threshold: 0.12 },
+      { threshold: 0, rootMargin: '0px 0px -60px 0px' },
     )
     observer.observe(el)
     return () => observer.disconnect()

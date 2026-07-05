@@ -21,11 +21,13 @@ function metadataRows(doc: VerificationDocument) {
     rows.push({ labelAr: 'رقم الرخصة', valueAr: doc.licenseNumber, ltr: true })
   if (doc.validUntil) rows.push({ labelAr: 'تاريخ الصلاحية', valueAr: doc.validUntil })
   if (doc.project) rows.push({ labelAr: 'المشروع', valueAr: doc.project })
+  if (doc.reference)
+    rows.push({ labelAr: 'مرجع التصريح', valueAr: doc.reference, ltr: true })
   return rows
 }
 
 /**
- * طبقة المستندات والتحقق — كتلة داعمة داخل قسم التعريف بالشركة،
+ * غرفة المستندات والتحقق — كتلة داعمة داخل قسم قاعدة الأصول المغربية،
  * وليست قسمًا رئيسيًا مستقلًا (تحافظ الواجهة على 10 أقسام فقط).
  */
 export function VerificationDocuments() {

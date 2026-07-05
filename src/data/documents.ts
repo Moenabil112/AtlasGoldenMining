@@ -1,6 +1,7 @@
 /**
- * طبقة المستندات والتحقق — وثائق داعمة لفهم الهوية القانونية والرخصة التشغيلية
- * تعرض كطبقة تحقق أولية وليست عرضًا عامًا أو نشرة اكتتاب.
+ * غرفة المستندات والتحقق — وثائق داعمة لفهم الهوية القانونية
+ * والرخص التشغيلية ومحفظة الرخص. تعرض كطبقة تحقق أولية وليست عرضًا عامًا.
+ * أرقام تصاريح الاستكشاف تبقى هنا كبيانات وصفية ولا تعرض كعناوين عامة.
  */
 
 export interface VerificationDocument {
@@ -14,6 +15,8 @@ export interface VerificationDocument {
   licenseNumber?: string
   validUntil?: string
   project?: string
+  /** مرجع تصريح يعرض كبيانات وصفية فقط (غرفة المستندات) */
+  reference?: string
   description: string
   fileUrl: string
   cta: string
@@ -65,14 +68,53 @@ export const verificationDocuments: VerificationDocument[] = [
     cta: 'عرض الموافقة البيئية',
     available: false,
   },
+  {
+    // TODO: Add Moroccan research/exploration license documents to
+    // public/documents/ when final packaging is prepared.
+    title: 'رخص البحث المغربية',
+    type: 'رخص بحث واستكشاف',
+    country: 'المملكة المغربية',
+    region: 'بني ملال – خنيفرة',
+    description:
+      'محفظة رخص بحث واستكشاف قابلة للتطوير بعد التحقق الفني، تعرض وثائقها ضمن حزمة المستندات النهائية.',
+    fileUrl: '/documents/morocco-research-licenses.pdf',
+    cta: 'عرض رخص البحث',
+    available: false,
+  },
+  {
+    title: 'GeoJSON / الخرائط',
+    type: 'بيانات جغرافية',
+    country: 'المملكة المغربية',
+    region: 'بني ملال – خنيفرة',
+    description:
+      'طبقات جغرافية لحدود رخصة إيسكسي ونطاق الموافقة البيئية بصيغة GeoJSON لأغراض العرض الأولي، مع لزوم التحقق المساحي النهائي قبل أي اعتماد تنفيذي.',
+    fileUrl: '/documents/isseksi-license-layers.geojson',
+    cta: 'تحميل طبقات GeoJSON',
+    available: true,
+  },
+  {
+    // TODO: Add the Aguelmous controlled reference file when prepared.
+    // Permit reference kept in metadata only, per disclosure policy.
+    title: 'أگلموس — Smart Fault Demonstrator',
+    type: 'مرجع استكشاف',
+    country: 'المملكة المغربية',
+    region: 'بني ملال – خنيفرة',
+    reference: 'PR3538746',
+    description:
+      'حالة استكشاف ذكي للأهداف متعددة المعادن المرتبطة بالفوالق والبنيات الجيولوجية، تعرض كمرجع خاضع للتحقق ضمن غرفة المستندات.',
+    fileUrl: '/documents/aguelmous-smart-fault-demonstrator.pdf',
+    cta: 'عرض مرجع أگلموس',
+    available: false,
+  },
 ]
 
 export const documentsLayer = {
-  titleAr: 'طبقة المستندات والتحقق',
-  subtitleAr: 'مستندات داعمة لفهم الهوية القانونية والرخصة التشغيلية محل العرض.',
+  titleAr: 'غرفة المستندات والتحقق',
+  subtitleAr:
+    'مستندات داعمة لفهم الهوية القانونية والرخص التشغيلية ومحفظة الرخص.',
   footerAr:
-    'هذه المستندات تعرض كطبقة تحقق أولية لدعم فهم الهوية القانونية والرخصة التشغيلية. ولا تمثل هذه الواجهة عرضًا عامًا أو نشرة اكتتاب أو ضمانًا للعائد. تخضع جميع الوثائق للمراجعة القانونية والفنية قبل أي توقيع نهائي.',
+    'هذه المستندات تعرض كطبقة تحقق أولية لدعم فهم الهوية القانونية والرخص التشغيلية. ولا تمثل هذه الواجهة عرضًا عامًا أو نشرة اكتتاب أو ضمانًا للعائد. تخضع جميع الوثائق للمراجعة القانونية والفنية قبل أي توقيع نهائي.',
   noteAr:
-    'ملاحظة: عرض هذه الوثائق يهدف إلى دعم التحقق الأولي من الهوية القانونية والرخصة التشغيلية، ولا يعد بديلاً عن الفحص القانوني والفني والمحاسبي قبل توقيع أي اتفاق نهائي.',
+    'عرض هذه المستندات يهدف إلى دعم التحقق الأولي، ولا يغني عن الفحص القانوني والفني والمحاسبي قبل أي اتفاق نهائي.',
   pendingAr: 'تتاح هذه الوثيقة ضمن حزمة المستندات النهائية عند الطلب.',
 }

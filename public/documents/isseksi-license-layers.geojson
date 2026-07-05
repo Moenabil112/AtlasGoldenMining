@@ -1,0 +1,55 @@
+{
+  "type": "FeatureCollection",
+  "name": "atlas_isseksi_license_layers",
+  "crs_note": "Source coordinates interpreted as EPSG:26191 Merchich / Nord Maroc and transformed to WGS84 for web display. Display purposes only — final cadastral verification required.",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "layer_type": "exploitation_license_perimeter",
+        "display_name_ar": "حدود رخصة استغلال إيسكسي",
+        "license_number": "353294",
+        "legal_entity_in_document": "SOUDAN IMPORT-EXPORT SARL",
+        "commercial_project_name": "Atlas Golden Mining / أطلس الذهبية للتعدين",
+        "area_km2_from_document": 15.36,
+        "original_crs_assumption": "EPSG:26191",
+        "validity_start": "03/10/2024",
+        "validity_end": "02/10/2034",
+        "validity_display_ar": "سارية إلى غاية 2034"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-6.279894, 32.223395],
+          [-6.237453, 32.223692],
+          [-6.237180, 32.194822],
+          [-6.245655, 32.194764],
+          [-6.245586, 32.187557],
+          [-6.279536, 32.187318],
+          [-6.279894, 32.223395]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "layer_type": "environmental_approval_plot",
+        "display_name_ar": "نطاق الموافقة البيئية الداعم",
+        "environmental_approval_number": "CRI/24/102",
+        "legal_entity_in_document": "SOUDAN IMPORT-EXPORT SARL",
+        "commercial_project_name": "Atlas Golden Mining / أطلس الذهبية للتعدين",
+        "original_crs_assumption": "EPSG:26191"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-6.266004, 32.215266],
+          [-6.261146, 32.216350],
+          [-6.255743, 32.200381],
+          [-6.260600, 32.199297],
+          [-6.266004, 32.215266]
+        ]]
+      }
+    }
+  ]
+}
