@@ -36,16 +36,17 @@ export function ValueChainSection() {
           <h3 className="mb-6 text-sm font-bold tracking-wide text-gold-600">
             مسار سلسلة القيمة
           </h3>
-          <ol className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          {/* شبكة على الشاشات الواسعة، وخطوات عمودية على الجوال */}
+          <ol className="grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">
             {valueChain.chainStepsAr.map((step, i) => (
               <li
                 key={step}
-                className="flex flex-col items-center gap-3 rounded-lg border border-ivory-200 bg-ivory-50 p-4 text-center"
+                className="flex items-center gap-4 rounded-lg border border-ivory-200 bg-ivory-50 p-3.5 sm:flex-col sm:gap-3 sm:p-4 sm:text-center"
               >
-                <span className="tabular-nums-latn flex h-8 w-8 items-center justify-center rounded-full bg-forest-950 text-xs font-bold text-gold-400">
+                <span className="tabular-nums-latn flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-forest-950 text-xs font-bold text-gold-400">
                   {i + 1}
                 </span>
-                <span className="text-xs font-semibold leading-relaxed text-forest-900 sm:text-sm">
+                <span className="text-sm font-semibold leading-relaxed text-forest-900 sm:text-xs lg:text-sm">
                   {step}
                 </span>
               </li>

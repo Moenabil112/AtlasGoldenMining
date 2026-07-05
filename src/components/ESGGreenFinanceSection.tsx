@@ -17,6 +17,16 @@ export function ESGGreenFinanceSection() {
 
       <div className="grid items-start gap-10 lg:grid-cols-5">
         <Reveal className="lg:col-span-3">
+          <div className="mb-6 flex flex-wrap gap-2.5">
+            {esgContent.framingAr.map((chip) => (
+              <span
+                key={chip}
+                className="rounded-full border border-gold-600/40 bg-ivory-50 px-3.5 py-1.5 text-xs font-semibold text-forest-900"
+              >
+                {chip}
+              </span>
+            ))}
+          </div>
           <p className="leading-loose text-charcoal-700">{esgContent.bodyAr}</p>
           <ul className="mt-8 grid gap-x-8 gap-y-3.5 sm:grid-cols-2">
             {esgContent.pointsAr.map((point) => (
