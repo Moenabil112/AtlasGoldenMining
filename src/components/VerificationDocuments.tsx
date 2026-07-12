@@ -30,21 +30,28 @@ function metadataRows(doc: VerificationDocument) {
  * غرفة المستندات والتحقق — كتلة داعمة داخل قسم قاعدة الأصول المغربية،
  * وليست قسمًا رئيسيًا مستقلًا (تحافظ الواجهة على 10 أقسام فقط).
  */
-export function VerificationDocuments() {
+interface VerificationDocumentsProps {
+  /** إظهار الترويسة الداخلية؛ يُخفى عند استخدامها داخل قسم له ترويسة خاصة */
+  showHeading?: boolean
+}
+
+export function VerificationDocuments({ showHeading = true }: VerificationDocumentsProps) {
   return (
     <Reveal delayMs={100}>
-      <div className="mt-16 border-t border-ivory-200 pt-12">
-        <div className="mb-10">
-          <div className="mb-3 flex items-center gap-4">
-            <span className="h-px w-10 bg-gold-600" aria-hidden="true" />
-            <h3 className="text-xl font-bold text-forest-900 md:text-2xl">
-              {documentsLayer.titleAr}
-            </h3>
+      <div>
+        {showHeading && (
+          <div className="mb-10">
+            <div className="mb-3 flex items-center gap-4">
+              <span className="h-px w-10 bg-gold-600" aria-hidden="true" />
+              <h3 className="text-xl font-bold text-forest-900 md:text-2xl">
+                {documentsLayer.titleAr}
+              </h3>
+            </div>
+            <p className="text-sm leading-relaxed text-charcoal-700">
+              {documentsLayer.subtitleAr}
+            </p>
           </div>
-          <p className="text-sm leading-relaxed text-charcoal-700">
-            {documentsLayer.subtitleAr}
-          </p>
-        </div>
+        )}
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {verificationDocuments.map((doc) => (

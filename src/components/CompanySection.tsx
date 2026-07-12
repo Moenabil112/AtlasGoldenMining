@@ -10,7 +10,7 @@ export function CompanySection() {
   return (
     <SovereignContainer id="company">
       <SectionHeader
-        index="02"
+        index="03"
         title={companyProfile.titleAr}
         headline={companyProfile.headlineAr}
       />

@@ -1,54 +1,19 @@
-import { useMemo } from 'react'
-import { heroContent } from '../data/companyProfile'
+import { heroContent, institutional } from '../data/companyProfile'
 import { brand } from '../data/investmentWindow'
-import { licensePerimeter } from '../data/isseksiGeojson'
 import { siteImages } from '../data/images'
 import { Reveal } from './Reveal'
 
-/** القسم 1 — الافتتاحية: نافذة الدخول الخاصة والجسر المغربي–السعودي */
+/** القسم 1 — الافتتاحية المؤسسية الخاصة */
 export function HeroSection() {
-  // مضلع الرخصة كعلامة مائية خلفية منخفضة الشفافية
-  const watermarkPoints = useMemo(() => {
-    const coords = licensePerimeter.coordinates
-    const lons = coords.map((c) => c[0])
-    const lats = coords.map((c) => c[1])
-    const minLon = Math.min(...lons)
-    const maxLon = Math.max(...lons)
-    const minLat = Math.min(...lats)
-    const maxLat = Math.max(...lats)
-    return coords
-      .map(([lon, lat]) => {
-        const x = ((lon - minLon) / (maxLon - minLon)) * 400
-        const y = ((maxLat - lat) / (maxLat - minLat)) * 400
-        return `${x.toFixed(1)},${y.toFixed(1)}`
-      })
-      .join(' ')
-  }, [])
-
   return (
     <header
       className="relative overflow-hidden bg-forest-950 text-ivory-50"
-      /* خلفية صورة تعدين إن توفرت مع تعتيم مؤسسي؛ غيابها لا يكسر التصميم */
       style={{
-        backgroundImage: `linear-gradient(to bottom, rgba(4,27,21,0.92), rgba(4,27,21,0.97)), url('${siteImages.hero.src}')`,
+        backgroundImage: `linear-gradient(to bottom, rgba(4,27,21,0.90), rgba(4,27,21,0.97)), url('${siteImages.hero.src}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
-      {/* علامة مائية: حدود رخصة إيسكسي */}
-      <svg
-        viewBox="0 0 400 400"
-        aria-hidden="true"
-        className="pointer-events-none absolute -start-10 top-1/2 h-[130%] w-auto -translate-y-1/2 opacity-[0.05]"
-      >
-        <polygon
-          points={watermarkPoints}
-          fill="none"
-          stroke="#d4b878"
-          strokeWidth="1.5"
-        />
-      </svg>
-
       <div className="relative mx-auto w-full max-w-6xl px-5 sm:px-8">
         {/* شريط علوي رفيع */}
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-ivory-50/10 py-6">
@@ -63,10 +28,15 @@ export function HeroSection() {
 
         <div className="py-20 md:py-28">
           <Reveal>
-            <p className="mb-6 inline-block rounded border border-gold-500/40 bg-gold-500/10 px-4 py-2 text-sm font-semibold text-gold-300">
-              {heroContent.badgeAr}
+            {/* التسمية المؤسسية + التنبيه */}
+            <p className="inline-block rounded border border-gold-500/40 bg-gold-500/10 px-4 py-2 text-sm font-semibold text-gold-300">
+              {institutional.eyebrowAr}
             </p>
-            <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-6xl">
+            <p className="mt-3 max-w-2xl text-xs leading-relaxed text-ivory-50/55">
+              {institutional.eyebrowDisclaimerAr}
+            </p>
+
+            <h1 className="mt-8 max-w-4xl text-4xl font-bold leading-tight md:text-6xl">
               {heroContent.titleAr}
               <span className="mt-3 block text-2xl font-semibold leading-snug text-ivory-50/85 md:text-4xl">
                 {heroContent.subtitleAr}
@@ -100,6 +70,27 @@ export function HeroSection() {
                 </div>
               ))}
             </div>
+          </Reveal>
+
+          <Reveal delayMs={420}>
+            {/* دعوات إجراء مؤسسية */}
+            <div className="mt-12 flex flex-wrap items-center gap-4">
+              <a
+                href="#data-room"
+                className="rounded border border-gold-500 bg-gold-500/10 px-6 py-3 text-sm font-semibold text-gold-300 transition-colors hover:bg-gold-500/20"
+              >
+                {institutional.ndaCtaAr}
+              </a>
+              <a
+                href="#portfolio"
+                className="rounded border border-ivory-50/25 px-6 py-3 text-sm font-semibold text-ivory-50/85 transition-colors hover:bg-ivory-50/5"
+              >
+                {institutional.secondaryCtaAr}
+              </a>
+            </div>
+            <p className="mt-8 max-w-3xl border-s-2 border-gold-500 ps-4 text-sm leading-loose text-ivory-50/70">
+              {heroContent.ndaNoteAr}
+            </p>
           </Reveal>
         </div>
       </div>
