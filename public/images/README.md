@@ -9,13 +9,12 @@ public-relative `/images/<name>.jpg` paths in `src/data/images.ts` and
 render automatically in place of the designed placeholders. If any file
 fails to load, the designed fallback shows instead.
 
-| الملف / File                          | القسم / Section |
-|---------------------------------------|-----------------|
-| atlas-hero-mining.jpg                 | الافتتاحية (خلفية الهيرو) / Hero background |
-| morocco-saudi-minerals-corridor.jpg   | من هي أطلس؟ (الحضور الإقليمي) / Company — regional presence |
-| geology-field-team.jpg                | القدرات الفنية / Technical capabilities |
-| benimellal-mining-terrain.jpg         | قاعدة الأصول المغربية / Morocco asset base |
-| ore-processing-value-chain.jpg        | سلسلة القيمة / Value chain |
-| smart-mining-data-layer.jpg           | التعدين الذكي / Smart mining |
-| digital-offtake-logistics.jpg         | عقود الأوفتيك / Digital offtake |
-| green-mining-esg.jpg                  | ESG والتعدين الأخضر / ESG & green mining |
+| الملف / File                    | النافذة / Window |
+|---------------------------------|------------------|
+| atlas-hero-mining.jpg           | 01 الافتتاحية (خلفية الهيرو) / Hero background |
+| geology-field-team.jpg          | 03 ملف الراعي / Sponsor profile |
+| benimellal-mining-terrain.jpg   | 04 أصل المنجم / Asset |
+| ore-processing-value-chain.jpg  | 06 العملية الفنية / Technical process |
+| green-mining-esg.jpg            | 15 التنفيذ المسؤول / Responsible delivery |
+| smart-mining-data-layer.jpg     | صورة تشغيل/بيانات احتياطية / Optional operations imagery |
+| digital-offtake-logistics.jpg   | 12 الأوفتيك والتسوية / Offtake & settlement |

@@ -1,21 +1,21 @@
-import { governanceRisk } from '../data/investmentOffer'
+import { governance } from '../data/atlasCopper'
 import { SovereignContainer } from './SovereignContainer'
 import { SectionHeader } from './SectionHeader'
 import { Reveal } from './Reveal'
 
-/** القسم 14 — حوكمة مؤسسية وإدارة مرحلية للمخاطر */
+/** النافذة 13 — الحوكمة وحماية المستثمر */
 export function GovernanceRiskSection() {
   return (
-    <SovereignContainer id="governance-risk">
+    <SovereignContainer id="governance">
       <SectionHeader
-        index="14"
-        title={governanceRisk.titleAr}
-        headline={governanceRisk.headlineAr}
+        index="13"
+        title={governance.titleAr}
+        headline={governance.headlineAr}
       />
 
       <Reveal>
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {governanceRisk.itemsAr.map((item) => (
+          {governance.itemsAr.map((item) => (
             <li
               key={item}
               className="flex items-start gap-3 rounded-lg border border-ivory-200 bg-ivory-100 p-5 text-sm font-medium leading-relaxed text-forest-900"
@@ -31,8 +31,8 @@ export function GovernanceRiskSection() {
       </Reveal>
 
       <Reveal delayMs={160}>
-        <p className="mt-10 max-w-3xl border-s-2 border-gold-600 ps-5 text-base font-semibold leading-loose text-forest-900">
-          {governanceRisk.highlightAr}
+        <p className="mt-10 max-w-3xl rounded-lg border border-gold-600/40 bg-ivory-100 p-6 text-sm font-semibold leading-loose text-charcoal-800">
+          {governance.legalNoteAr}
         </p>
       </Reveal>
     </SovereignContainer>

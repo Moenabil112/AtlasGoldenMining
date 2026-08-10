@@ -109,7 +109,7 @@ export function MapPanel() {
         <svg
           viewBox={`0 0 ${VIEW_W} ${viewH}`}
           role="img"
-          aria-label="خريطة حدود رخصة استغلال إيسكسي ونطاق الموافقة البيئية"
+          aria-label="خريطة حدود رخصة استغلال منجم أطلس للنحاس ونطاق الموافقة البيئية"
           className="block w-full"
         >
           {/* شبكة خلفية خفيفة بطابع مساحي */}
@@ -148,7 +148,7 @@ export function MapPanel() {
               onClick={() => setShowFactCard(true)}
               className="cursor-pointer"
               role="button"
-              aria-label="عرض بطاقة بيانات رخصة إيسكسي"
+              aria-label="عرض بطاقة بيانات رخصة منجم أطلس للنحاس"
             >
               <polygon
                 points={licensePoints}
@@ -169,7 +169,7 @@ export function MapPanel() {
                 fontWeight="600"
                 fontFamily="inherit"
               >
-                رخصة إيسكسي – 353294
+                منجم أطلس للنحاس – 353294
               </text>
               <text
                 x={labelPos[0]}
@@ -179,7 +179,7 @@ export function MapPanel() {
                 fontSize="12"
                 fontFamily="inherit"
               >
-                15.36 كلم² — سارية إلى غاية 2034
+                15.36 كلم²
               </text>
             </g>
           )}
@@ -218,7 +218,7 @@ export function MapPanel() {
         {showFactCard && (
           <div className="absolute inset-x-4 bottom-4 rounded-lg border border-gold-500/40 bg-forest-900/95 p-5 shadow-xl backdrop-blur-sm sm:inset-x-auto sm:start-4 sm:max-w-sm">
             <div className="mb-3 flex items-start justify-between gap-3">
-              <h4 className="font-bold text-gold-300">رخصة إيسكسي – 353294</h4>
+              <h4 className="font-bold text-gold-300">منجم أطلس للنحاس – 353294</h4>
               <button
                 type="button"
                 onClick={() => setShowFactCard(false)}
@@ -238,18 +238,18 @@ export function MapPanel() {
                 <dd className="tabular-nums-latn font-medium">15.36 كلم²</dd>
               </div>
               <div className="flex justify-between gap-4">
-                <dt className="text-ivory-50/55">السريان</dt>
+                <dt className="text-ivory-50/55">الموقع</dt>
+                <dd className="font-medium">بني ملال – خنيفرة</dd>
+              </div>
+              <div className="flex justify-between gap-4">
+                <dt className="text-ivory-50/55">الموافقة البيئية</dt>
                 <dd className="tabular-nums-latn font-medium" dir="ltr">
-                  03/10/2024 – 02/10/2034
+                  CRI/24/102
                 </dd>
               </div>
               <div className="flex justify-between gap-4">
-                <dt className="text-ivory-50/55">الكيان القانوني</dt>
+                <dt className="text-ivory-50/55">الكيان القانوني في الوثيقة</dt>
                 <dd className="font-medium">SOUDAN IMPORT-EXPORT SARL</dd>
-              </div>
-              <div className="flex justify-between gap-4">
-                <dt className="text-ivory-50/55">حالة الشراكة</dt>
-                <dd className="font-medium">نافذة شراكة إنتاجية — المرحلة الأولى</dd>
               </div>
             </dl>
           </div>

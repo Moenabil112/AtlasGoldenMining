@@ -1,60 +1,68 @@
 import { HeroSection } from './components/HeroSection'
-import { ExecutiveSummarySection } from './components/ExecutiveSummarySection'
-import { CompanySection } from './components/CompanySection'
-import { CapabilitiesSection } from './components/CapabilitiesSection'
-import { PortfolioSection } from './components/PortfolioSection'
+import { SnapshotSection } from './components/SnapshotSection'
+import { SponsorProfileSection } from './components/SponsorProfileSection'
+import { AssetSection } from './components/AssetSection'
+import { ProductionPlanSection } from './components/ProductionPlanSection'
+import { TechnicalProcessSection } from './components/TechnicalProcessSection'
+import { StagedCapacitySection } from './components/StagedCapacitySection'
 import { PropositionSection } from './components/PropositionSection'
-import { CapitalDeploymentSection } from './components/CapitalDeploymentSection'
-import { PhasedInvestmentSection } from './components/PhasedInvestmentSection'
-import { ValueChainSection } from './components/ValueChainSection'
+import { FundingStructureSection } from './components/FundingStructureSection'
+import { EquipmentContributionSection } from './components/EquipmentContributionSection'
+import { EconomicsSection } from './components/EconomicsSection'
 import { OfftakeSection } from './components/OfftakeSection'
-import { TechGovernanceSection } from './components/TechGovernanceSection'
-import { CorridorSection } from './components/CorridorSection'
-import { ESGGreenFinanceSection } from './components/ESGGreenFinanceSection'
 import { GovernanceRiskSection } from './components/GovernanceRiskSection'
+import { FIDConditionsSection } from './components/FIDConditionsSection'
+import { ResponsibleDeliverySection } from './components/ResponsibleDeliverySection'
+import { LicenseMapSection } from './components/LicenseMapSection'
 import { DataRoomSection } from './components/DataRoomSection'
 import { ClosingSection } from './components/ClosingSection'
 import { Footer } from './components/Footer'
 
 /**
- * عرض استثماري خاص — محفظة أطلس التعدينية
- * رحلة مؤسسية من 16 قسمًا: من التعريف بأطلس إلى المحفظة والمقترح
- * الاستثماري (100 مليون ريال / 35%) وصولًا إلى غرفة المستندات والإغلاق.
+ * منجم أطلس للنحاس — العرض الاستثماري
+ * رحلة قرار المستثمر عبر 18 نافذة: من الافتتاحية إلى الأصل وخطة الإنتاج
+ * والعملية الفنية والتمويل والاقتصاديات والأوفتيك والحوكمة، ثم غرفة البيانات
+ * والدعوة الختامية. مشاركة إنتاجية على مستوى المشروع: 50% من إنتاج كاثود
+ * النحاس الفعلي مقابل تمويل 50% من المتطلبات المؤهلة لمدة سبع سنوات.
  */
 function App() {
   return (
     <main>
-      {/* 01 — الافتتاحية المؤسسية الخاصة */}
+      {/* 01 — الافتتاحية الاستثمارية */}
       <HeroSection />
-      {/* 02 — الملخص التنفيذي */}
-      <ExecutiveSummarySection />
-      {/* 03 — التعريف بأطلس الذهبية للتعدين */}
-      <CompanySection />
-      {/* 04 — القدرات الفنية والتشغيلية */}
-      <CapabilitiesSection />
-      {/* 05 — محفظة أطلس التعدينية (المشروعات، المعادن، إيسكسي، الخريطة) */}
-      <PortfolioSection />
-      {/* 06 — المقترح الاستثماري العام */}
+      {/* 02 — لقطة قرار المستثمر */}
+      <SnapshotSection />
+      {/* 03 — ملف أطلس الذهبية للتعدين (الراعي) */}
+      <SponsorProfileSection />
+      {/* 04 — أصل منجم أطلس للنحاس */}
+      <AssetSection />
+      {/* 05 — خطة الإنتاج */}
+      <ProductionPlanSection />
+      {/* 06 — العملية الفنية */}
+      <TechnicalProcessSection />
+      {/* 07 — القدرة المرحلية للمصنع */}
+      <StagedCapacitySection />
+      {/* 08 — المقترح الاستثماري */}
       <PropositionSection />
-      {/* 07 — منطق توظيف رأس المال */}
-      <CapitalDeploymentSection />
-      {/* 08 — الهيكل الاستثماري المرحلي */}
-      <PhasedInvestmentSection />
-      {/* 09 — سلسلة القيمة */}
-      <ValueChainSection />
-      {/* 10 — عقود الأوفتيك */}
+      {/* 09 — هيكل التمويل */}
+      <FundingStructureSection />
+      {/* 10 — مساهمة المعدات */}
+      <EquipmentContributionSection />
+      {/* 11 — اقتصاديات الحالة الأساسية */}
+      <EconomicsSection />
+      {/* 12 — الأوفتيك والتسوية */}
       <OfftakeSection />
-      {/* 11 — التكنولوجيا والحوكمة الرقمية */}
-      <TechGovernanceSection />
-      {/* 12 — الممر المغربي–السعودي */}
-      <CorridorSection />
-      {/* 13 — ESG والتمويل المستدام */}
-      <ESGGreenFinanceSection />
-      {/* 14 — الحوكمة وإدارة المخاطر */}
+      {/* 13 — الحوكمة وحماية المستثمر */}
       <GovernanceRiskSection />
-      {/* 15 — غرفة المستندات والتحقق واتفاقية عدم الإفصاح */}
+      {/* 14 — شروط القرار الاستثماري النهائي (FID) */}
+      <FIDConditionsSection />
+      {/* 15 — التنفيذ المسؤول للمشروع */}
+      <ResponsibleDeliverySection />
+      {/* 16 — خريطة الرخصة والأدلة الداعمة */}
+      <LicenseMapSection />
+      {/* 17 — غرفة البيانات */}
       <DataRoomSection />
-      {/* 16 — الإغلاق المؤسسي */}
+      {/* 18 — دعوة الاستثمار الختامية */}
       <ClosingSection />
       <Footer />
     </main>

@@ -1,27 +1,28 @@
-import { proposition } from '../data/investmentOffer'
-import { institutional } from '../data/companyProfile'
+import { proposition } from '../data/atlasCopper'
 import { SovereignContainer } from './SovereignContainer'
 import { SectionHeader } from './SectionHeader'
 import { Reveal } from './Reveal'
 
-/** القسم 6 — المقترح الاستثماري العام: 100 مليون مقابل 35% من المحفظة */
+/** النافذة 08 — المقترح الاستثماري */
 export function PropositionSection() {
   return (
     <SovereignContainer id="proposition" tone="dark">
       <SectionHeader
-        index="06"
+        index="08"
         title={proposition.titleAr}
         headline={proposition.headlineAr}
         dark
       />
+
       <Reveal>
-        <p className="max-w-3xl leading-loose text-ivory-50/75">{proposition.bodyAr}</p>
+        <p className="max-w-3xl rounded-lg border border-gold-500/30 bg-gold-500/5 p-7 text-base font-semibold leading-loose text-ivory-50">
+          {proposition.statementAr}
+        </p>
       </Reveal>
 
-      {/* الشروط المعلنة */}
       <Reveal delayMs={140}>
         <dl className="mt-12 overflow-hidden rounded-lg border border-gold-500/25">
-          {proposition.termsRows.map((row, i) => (
+          {proposition.rows.map((row, i) => (
             <div
               key={row.labelAr}
               className={`flex flex-col gap-1 px-6 py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8 ${
@@ -41,11 +42,6 @@ export function PropositionSection() {
         <p className="mt-8 max-w-3xl leading-loose text-ivory-50/70">
           {proposition.clarificationAr}
         </p>
-        <div className="mt-8 rounded-lg border border-gold-500/25 bg-gold-500/5 p-6">
-          <p className="text-sm leading-loose text-ivory-50/80">
-            {institutional.ndaMessageAr}
-          </p>
-        </div>
       </Reveal>
     </SovereignContainer>
   )
