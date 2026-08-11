@@ -12,10 +12,7 @@
         "legal_entity_in_document": "SOUDAN IMPORT-EXPORT SARL",
         "commercial_project_name": "Atlas Golden Mining / أطلس الذهبية للتعدين",
         "area_km2_from_document": 15.36,
-        "original_crs_assumption": "EPSG:26191",
-        "validity_start": "03/10/2024",
-        "validity_end": "02/10/2034",
-        "validity_display_ar": "سارية إلى غاية 2034"
+        "original_crs_assumption": "EPSG:26191"
       },
       "geometry": {
         "type": "Polygon",

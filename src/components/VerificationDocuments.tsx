@@ -19,7 +19,6 @@ function metadataRows(doc: VerificationDocument) {
     rows.push({ labelAr: 'الرقم الوطني', valueAr: doc.nationalNumber, ltr: true })
   if (doc.licenseNumber)
     rows.push({ labelAr: 'رقم الرخصة', valueAr: doc.licenseNumber, ltr: true })
-  if (doc.validUntil) rows.push({ labelAr: 'تاريخ الصلاحية', valueAr: doc.validUntil })
   if (doc.project) rows.push({ labelAr: 'المشروع', valueAr: doc.project })
   if (doc.reference)
     rows.push({ labelAr: 'مرجع التصريح', valueAr: doc.reference, ltr: true })

@@ -1,7 +1,7 @@
 /**
- * غرفة المستندات والتحقق — وثائق داعمة لفهم الهوية القانونية
- * والرخص التشغيلية ومحفظة الرخص. تعرض كطبقة تحقق أولية وليست عرضًا عامًا.
- * أرقام تصاريح الاستكشاف تبقى هنا كبيانات وصفية ولا تعرض كعناوين عامة.
+ * غرفة البيانات والتحقق — وثائق داعمة لفهم الهوية القانونية للراعي
+ * والرخصة التشغيلية والأدلة الجغرافية لمنجم أطلس للنحاس.
+ * تُعرض كطبقة تحقق ومراجعة وليست عرضًا عامًا.
  */
 
 export interface VerificationDocument {
@@ -13,9 +13,8 @@ export interface VerificationDocument {
   nationalNumber?: string
   region?: string
   licenseNumber?: string
-  validUntil?: string
   project?: string
-  /** مرجع تصريح يعرض كبيانات وصفية فقط (غرفة المستندات) */
+  /** مرجع تصريح يعرض كبيانات وصفية فقط (غرفة البيانات) */
   reference?: string
   description: string
   fileUrl: string
@@ -33,24 +32,23 @@ export const verificationDocuments: VerificationDocument[] = [
     issueDate: '13/08/2024',
     nationalNumber: '7041340865',
     description:
-      'يوضح السجل التجاري وجود كيان تجاري نشط باسم أطلس الذهبية للتعدين في المملكة العربية السعودية، كشركة ذات مسؤولية محدودة.',
+      'يوضح السجل التجاري وجود كيان تجاري نشط باسم أطلس الذهبية للتعدين، راعي مشروع منجم أطلس للنحاس، كشركة ذات مسؤولية محدودة.',
     fileUrl: '/documents/atlas-golden-mining-saudi-commercial-registration.pdf',
     cta: 'عرض السجل التجاري',
     available: true,
   },
   {
-    // TODO: Add the Isseksi exploitation license PDF to
-    // public/documents/isseksi-exploitation-license-353294.pdf
+    // TODO: Add the exploitation license PDF to
+    // public/documents/atlas-copper-exploitation-license-353294.pdf
     // when final document packaging is prepared, then set available: true.
-    title: 'رخصة استغلال إيسكسي رقم 353294',
+    title: 'رخصة استغلال منجم أطلس للنحاس رقم 353294',
     type: 'رخصة استغلال',
     country: 'المملكة المغربية',
     region: 'بني ملال – خنيفرة',
     licenseNumber: '353294',
-    validUntil: 'إلى غاية 02/10/2034',
     description:
-      'توضح الوثيقة رخصة الاستغلال المرتبطة بمشروع إيسكسي في جهة بني ملال – خنيفرة، باعتبارها الأصل التشغيلي الأول في نافذة الشراكة الإنتاجية.',
-    fileUrl: '/documents/isseksi-exploitation-license-353294.pdf',
+      'توضح الوثيقة رخصة الاستغلال المرتبطة بمنجم أطلس للنحاس في جهة بني ملال – خنيفرة، باعتبارها أساس الأصل التشغيلي للفرصة الاستثمارية.',
+    fileUrl: '/documents/atlas-copper-exploitation-license-353294.pdf',
     cta: 'عرض وثيقة الرخصة',
     available: false,
   },
@@ -61,24 +59,25 @@ export const verificationDocuments: VerificationDocument[] = [
     type: 'موافقة بيئية',
     country: 'المملكة المغربية',
     region: 'بني ملال – خنيفرة',
-    project: 'استغلال معدن النحاس بإيسكسي',
+    project: 'استغلال معدن النحاس بمنجم أطلس',
     description:
-      'يوثق قرار الموافقة البيئية المرتبط بمشروع استغلال معدن النحاس داخل نطاق رخصة إيسكسي، ويعرض كوثيقة داعمة تخضع للمراجعة القانونية والفنية.',
-    fileUrl: '/documents/isseksi-environmental-approval.pdf',
+      'يوثق قرار الموافقة البيئية المرتبط بمشروع استغلال معدن النحاس داخل نطاق الرخصة، ويعرض كوثيقة داعمة تخضع للمراجعة القانونية والفنية.',
+    fileUrl: '/documents/atlas-copper-environmental-approval.pdf',
     cta: 'عرض الموافقة البيئية',
     available: false,
   },
   {
-    // TODO: Add Moroccan research/exploration license documents to
-    // public/documents/ when final packaging is prepared.
-    title: 'رخص البحث المغربية',
-    type: 'رخص بحث واستكشاف',
+    // TODO: Add the Rev.04 controlled financial model to
+    // public/documents/ within the controlled due-diligence layer.
+    title: 'النموذج المالي Rev.04 (طبقة مراقبة)',
+    type: 'نموذج مالي',
     country: 'المملكة المغربية',
     region: 'بني ملال – خنيفرة',
+    project: 'منجم أطلس للنحاس',
     description:
-      'محفظة رخص بحث واستكشاف قابلة للتطوير بعد التحقق الفني، تعرض وثائقها ضمن حزمة المستندات النهائية.',
-    fileUrl: '/documents/morocco-research-licenses.pdf',
-    cta: 'عرض رخص البحث',
+      'النموذج المالي وتفصيل CAPEX/OPEX واقتصاديات الحالة الأساسية ضمن طبقة العناية الواجبة المراقبة، متاح بعد توقيع اتفاقية عدم الإفصاح واستكمال التحقق.',
+    fileUrl: '/documents/atlas-copper-financial-model-rev04.pdf',
+    cta: 'ضمن الطبقة المراقبة',
     available: false,
   },
   {
@@ -87,76 +86,22 @@ export const verificationDocuments: VerificationDocument[] = [
     country: 'المملكة المغربية',
     region: 'بني ملال – خنيفرة',
     description:
-      'طبقات جغرافية لحدود رخصة إيسكسي ونطاق الموافقة البيئية بصيغة GeoJSON لأغراض العرض الأولي، مع لزوم التحقق المساحي النهائي قبل أي اعتماد تنفيذي.',
+      'طبقات جغرافية لحدود رخصة الاستغلال ونطاق الموافقة البيئية بصيغة GeoJSON لأغراض العرض، مع لزوم التحقق المساحي (الكاداسترالي) النهائي قبل أي اعتماد تنفيذي.',
     fileUrl: '/documents/isseksi-license-layers.geojson',
     cta: 'تحميل طبقات GeoJSON',
     available: true,
   },
-  {
-    // TODO: Add the Aguelmous controlled reference file when prepared.
-    // Permit reference kept in metadata only, per disclosure policy.
-    title: 'أگلموس — Smart Fault Demonstrator',
-    type: 'مرجع استكشاف',
-    country: 'المملكة المغربية',
-    region: 'بني ملال – خنيفرة',
-    reference: 'PR3538746',
-    description:
-      'حالة استكشاف ذكي للأهداف متعددة المعادن المرتبطة بالفوالق والبنيات الجيولوجية، تعرض كمرجع خاضع للتحقق ضمن غرفة المستندات.',
-    fileUrl: '/documents/aguelmous-smart-fault-demonstrator.pdf',
-    cta: 'عرض مرجع أگلموس',
-    available: false,
-  },
 ]
 
 export const documentsLayer = {
-  titleAr: 'غرفة المستندات والتحقق',
+  titleAr: 'غرفة البيانات والتحقق',
   subtitleAr:
-    'مستندات داعمة لفهم الهوية القانونية والرخص التشغيلية ومحفظة الرخص.',
+    'مستندات داعمة لفهم الهوية القانونية للراعي والرخصة التشغيلية والأدلة الجغرافية لمنجم أطلس للنحاس.',
   footerAr:
-    'هذه المستندات تعرض كطبقة تحقق أولية لدعم فهم الهوية القانونية والرخص التشغيلية. ولا تمثل هذه الواجهة عرضًا عامًا أو نشرة اكتتاب أو ضمانًا للعائد. تخضع جميع الوثائق للمراجعة القانونية والفنية قبل أي توقيع نهائي.',
+    'تُعرض هذه المستندات كطبقة تحقق لدعم فهم الهوية القانونية والرخصة التشغيلية. ولا تمثل هذه الواجهة عرضًا عامًا أو نشرة اكتتاب أو ضمانًا للعائد. تخضع جميع الوثائق للمراجعة القانونية والفنية قبل أي توقيع نهائي.',
   noteAr:
-    'عرض هذه المستندات يهدف إلى دعم التحقق الأولي، ولا يغني عن الفحص القانوني والفني والمحاسبي قبل أي اتفاق نهائي.',
-  pendingAr: 'تتاح هذه الوثيقة ضمن حزمة المستندات النهائية عند الطلب.',
+    'عرض هذه المستندات يهدف إلى دعم التحقق، ولا يغني عن الفحص القانوني والفني والمحاسبي قبل أي اتفاق نهائي.',
+  pendingAr: 'تتاح هذه الوثيقة ضمن حزمة المستندات النهائية أو الطبقة المراقبة عند الطلب.',
   statusAvailableAr: 'متوفر',
   statusPendingAr: 'قيد الإضافة',
-}
-
-/** غرفة المستندات والتحقق — الطبقات العامة والطبقات المحمية باتفاقية عدم الإفصاح */
-export const dataRoom = {
-  publicTitleAr: 'متاح ضمن العرض العام',
-  publicItemsAr: [
-    'تعريف أطلس',
-    'الاستثمار المستهدف',
-    'الحصة المتاحة',
-    'نطاق المحفظة',
-    'المعادن المستهدفة',
-    'رخصة إيسكسي',
-    'نبذة عن الرخص الأخرى',
-    'مبادئ استخدام رأس المال',
-    'سلسلة القيمة',
-    'التكنولوجيا والحوكمة',
-    'ESG',
-    'المستندات القانونية العامة',
-  ],
-  protectedTitleAr: 'محمي بعد توقيع اتفاقية عدم الإفصاح',
-  protectedItemsAr: [
-    'النموذج المالي',
-    'تقييم المحفظة',
-    'آلية احتساب 35%',
-    'توزيع الحصة بين المشروعات',
-    'توقعات الإنتاج',
-    'التحاليل الجيولوجية',
-    'CAPEX وOPEX',
-    'خطة السحب',
-    'فترة استرداد رأس المال',
-    'توزيع الأرباح',
-    'IRR وNPV',
-    'الضمانات',
-    'عقود الأوفتيك',
-    'بيانات المشترين',
-    'خطة الخروج',
-    'سجل المخاطر الكامل',
-  ],
-  ndaStatementAr:
-    'النموذج المالي، تفاصيل هيكل الشراكة، آليات استرداد رأس المال، الأرباح، الضمانات والتقييم متاحة للمراجعة المؤسسية بعد توقيع اتفاقية عدم الإفصاح واستكمال التحقق من الجهة المخولة.',
 }

@@ -41,9 +41,6 @@ export const isseksiGeojson = {
         area_km2_from_document: 15.36,
         projected_area_km2_calculated: 15.3615,
         original_crs_assumption: 'EPSG:26191',
-        validity_start: '03/10/2024',
-        validity_end: '02/10/2034',
-        validity_display_ar: 'سارية إلى غاية 2034',
       },
       geometry: {
         type: 'Polygon',

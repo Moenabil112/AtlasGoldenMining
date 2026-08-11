@@ -1,37 +1,40 @@
-import { dataRoom, documentsLayer } from '../data/documents'
-import { institutional } from '../data/companyProfile'
+import { dataRoomLayers, brand } from '../data/atlasCopper'
 import { SovereignContainer } from './SovereignContainer'
 import { SectionHeader } from './SectionHeader'
 import { Reveal } from './Reveal'
 import { VerificationDocuments } from './VerificationDocuments'
 
-/** القسم 15 — غرفة المستندات والتحقق والوصول عبر اتفاقية عدم الإفصاح */
+/**
+ * النافذة 17 — غرفة البيانات
+ * طبقة العناية الواجبة والأدلة الداعمة لمنجم أطلس للنحاس (طبقتا وصول:
+ * عامة/أولية ومراقبة). تُحافظ على بطاقات المستندات وآلية الوصول القائمة.
+ */
 export function DataRoomSection() {
   return (
     <SovereignContainer id="data-room" tone="ivory">
       <SectionHeader
-        index="15"
-        title={documentsLayer.titleAr}
-        headline={documentsLayer.titleAr}
+        index="17"
+        title={dataRoomLayers.titleAr}
+        headline={dataRoomLayers.headlineAr}
       />
       <Reveal>
         <p className="max-w-3xl leading-loose text-charcoal-700">
-          {documentsLayer.subtitleAr}
+          {dataRoomLayers.subtitleAr}
         </p>
       </Reveal>
 
-      {/* الطبقة العامة مقابل الطبقة المحمية */}
+      {/* الطبقة العامة مقابل الطبقة المراقبة */}
       <div className="mt-12 grid gap-6 md:grid-cols-2">
         <Reveal>
           <div className="h-full rounded-lg border border-ivory-200 bg-ivory-50 p-7">
             <div className="mb-5 flex items-center gap-2.5">
               <span className="h-1.5 w-1.5 rounded-full bg-forest-600" aria-hidden="true" />
               <h3 className="text-sm font-bold text-forest-900">
-                {dataRoom.publicTitleAr}
+                {dataRoomLayers.publicTitleAr}
               </h3>
             </div>
             <ul className="grid gap-2.5 sm:grid-cols-2">
-              {dataRoom.publicItemsAr.map((item) => (
+              {dataRoomLayers.publicItemsAr.map((item) => (
                 <li
                   key={item}
                   className="flex items-start gap-2.5 text-sm leading-relaxed text-charcoal-700"
@@ -53,11 +56,11 @@ export function DataRoomSection() {
                 🔒
               </span>
               <h3 className="text-sm font-bold text-gold-300">
-                {dataRoom.protectedTitleAr}
+                {dataRoomLayers.protectedTitleAr}
               </h3>
             </div>
             <ul className="grid gap-2.5 sm:grid-cols-2">
-              {dataRoom.protectedItemsAr.map((item) => (
+              {dataRoomLayers.protectedItemsAr.map((item) => (
                 <li
                   key={item}
                   className="flex items-start gap-2.5 text-sm leading-relaxed text-ivory-50/75"
@@ -78,23 +81,23 @@ export function DataRoomSection() {
       <Reveal delayMs={160}>
         <div className="mt-8 rounded-lg border border-gold-500/40 bg-ivory-100 p-7">
           <p className="text-sm leading-loose text-charcoal-800">
-            {dataRoom.ndaStatementAr}
+            {dataRoomLayers.ndaStatementAr}
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-4">
             <a
               href="#data-room"
               className="rounded border border-forest-800 bg-forest-950 px-6 py-3 text-sm font-semibold text-ivory-50 transition-colors hover:bg-forest-900"
             >
-              {institutional.ndaCtaAr}
+              {brand.dataRoomCtaAr}
             </a>
             <span className="text-xs leading-relaxed text-charcoal-700/70">
-              {institutional.ndaMessageAr}
+              {dataRoomLayers.ndaMessageAr}
             </span>
           </div>
         </div>
       </Reveal>
 
-      {/* بطاقات المستندات (غرفة المستندات الحالية) */}
+      {/* بطاقات المستندات (غرفة البيانات الحالية) */}
       <div className="mt-16 border-t border-ivory-200 pt-12">
         <VerificationDocuments showHeading={false} />
       </div>
